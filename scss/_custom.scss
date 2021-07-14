@@ -1,0 +1,111 @@
+html {
+  @include box-sizing(border-box);
+  height: 100%;
+}
+
+*,
+*:after,
+*:before {
+  @include box-sizing(inherit);
+}
+
+body {
+  font-family: $fuente_principal;
+  height: 100%;
+}
+img {
+  max-width: 100%;
+}
+
+.centrado {
+  text-align: center;
+}
+
+.oculto {
+  display: none;
+}
+
+.pagina {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.contenedor-principal {
+  flex: 1;
+}
+
+.header {
+  display: flex;
+
+  .nombre-sitio {
+    flex: 0 0 5rem;
+    background-color: $secundario;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    h1 {
+      color: $blanco;
+      margin: 0;
+    }
+
+    .escritorio {
+      display: none;
+
+      @include desktop {
+        display: block;
+      }
+    }
+
+    .movil {
+      @include desktop {
+        display: none;
+      }
+    }
+
+    @include desktop {
+      flex: 0 0 20rem;
+    }
+  }
+
+  .barra {
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+    background-color: $primario;
+    padding: 1rem;
+
+    .menu-izquierdo {
+      display: flex;
+      align-items: center;
+    }
+
+    .menu-derecho {
+      display: flex;
+      align-items: center;
+
+      .caja {
+        padding: 0 1rem;
+        display: flex;
+
+        &:hover {
+          background-color: darken($primario, 5);
+        }
+
+        a {
+          color: $blanco;
+          text-decoration: none;
+
+          span {
+            background-color: $terciario;
+            border-radius: 50%;
+            padding: 0.3rem;
+            margin-left: 0.5rem;
+          }
+        }
+      }
+    }
+  }
+}
