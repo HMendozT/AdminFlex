@@ -13,6 +13,7 @@ html {
 body {
   font-family: "Raleway", sans-serif;
   height: 100%;
+  background-color: #eeeeee;
 }
 
 img {
@@ -25,6 +26,15 @@ img {
 
 .oculto {
   display: none;
+}
+
+.fa-arrow-left,
+.fa-arrow-right {
+  cursor: pointer;
+}
+
+.no-menu.pagina .sidebar {
+  margin-left: -20rem;
 }
 
 .pagina {
@@ -86,6 +96,15 @@ img {
   align-items: center;
 }
 
+.header .barra .menu-izquierdo i {
+  color: #ffffff;
+  font-size: 1.5rem;
+}
+
+.header .barra .menu-izquierdo .fa-arrow-right {
+  display: none;
+}
+
 .header .barra .menu-derecho {
   display: flex;
   align-items: center;
@@ -107,7 +126,7 @@ img {
 
 .header .barra .menu-derecho .caja a span {
   background-color: #009045;
-  border-radius: 50%;
+  border-radius: 90%;
   padding: 0.3rem;
   margin-left: 0.5rem;
 }
@@ -122,6 +141,7 @@ img {
   flex: 0 0 20rem;
   padding: 1rem;
   color: #ffffff;
+  transition: margin-left 0.3s ease;
 }
 
 .contenedor-principal .sidebar .usuario {
@@ -194,4 +214,83 @@ img {
 
 .contenedor-principal .sidebar .menu-admin .menu > li:hover ul {
   display: block;
+}
+
+.contenedor-principal .contenido {
+  flex: 1;
+  padding: 2rem;
+}
+
+.contenedor-principal .contenido h2 {
+  margin: 0 0 2rem 0;
+}
+
+.contenedor-principal .contenido .formulario {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.contenedor-principal .contenido .formulario .campo {
+  flex: 0 0 100%;
+  display: flex;
+  margin-bottom: 1rem;
+  align-items: center;
+}
+
+@media only screen and (min-width: 768px) {
+  .contenedor-principal .contenido .formulario .campo {
+    flex: 0 0 calc(50% - 1rem);
+  }
+}
+
+.contenedor-principal .contenido .formulario .campo.expandir {
+  flex: 0 0 calc(100% - 1rem);
+  align-items: flex-start;
+}
+
+.contenedor-principal .contenido .formulario .campo.expandir label {
+  flex: 0 0 12.5%;
+}
+
+.contenedor-principal .contenido .formulario .campo.expandir textarea {
+  flex: 1;
+}
+
+.contenedor-principal .contenido .formulario .campo label {
+  flex: 0 0 25%;
+}
+
+.contenedor-principal .contenido .formulario .campo input[type="text"] {
+  flex: 0 0 75%;
+  height: 2rem;
+}
+
+.contenedor-principal .contenido .formulario .campo .opciones {
+  display: flex;
+  flex: 1;
+}
+
+.contenedor-principal .contenido .formulario .campo .opciones label {
+  padding-left: 1rem;
+}
+
+.contenedor-principal .contenido .formulario .campo.enviar {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.contenedor-principal .contenido .formulario .campo.enviar .boton {
+  background-color: #005b9f;
+  padding: 0.5rem 1rem;
+  display: block;
+  text-align: center;
+  color: #ffffff;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.contenedor-principal .contenido .formulario .campo.enviar .boton:hover {
+  cursor: pointer;
+  background-color: #003e6c;
 }

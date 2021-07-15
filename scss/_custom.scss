@@ -12,6 +12,7 @@ html {
 body {
   font-family: $fuente_principal;
   height: 100%;
+  background-color: $gris;
 }
 img {
   max-width: 100%;
@@ -23,6 +24,17 @@ img {
 
 .oculto {
   display: none;
+}
+
+.fa-arrow-left,
+.fa-arrow-right {
+  cursor: pointer;
+}
+
+.no-menu.pagina {
+  .sidebar {
+    margin-left: -20rem;
+  }
 }
 
 .pagina {
@@ -76,6 +88,15 @@ img {
     .menu-izquierdo {
       display: flex;
       align-items: center;
+
+      i {
+        color: $blanco;
+        font-size: 1.5rem;
+      }
+
+      .fa-arrow-right {
+        display: none;
+      }
     }
 
     .menu-derecho {
@@ -96,7 +117,7 @@ img {
 
           span {
             background-color: $terciario;
-            border-radius: 50%;
+            border-radius: 90%;
             padding: 0.3rem;
             margin-left: 0.5rem;
           }
@@ -115,6 +136,7 @@ img {
     flex: 0 0 20rem;
     padding: 1rem;
     color: $blanco;
+    transition: margin-left 0.3s ease;
 
     .usuario {
       display: flex;
@@ -185,6 +207,72 @@ img {
             ul {
               display: block;
             }
+          }
+        }
+      }
+    }
+  }
+
+  .contenido {
+    flex: 1;
+    padding: 2rem;
+
+    h2 {
+      margin: 0 0 2rem 0;
+    }
+
+    .formulario {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      .campo {
+        flex: 0 0 100%;
+        display: flex;
+        margin-bottom: 1rem;
+        align-items: center;
+
+        @include tablet {
+          flex: 0 0 calc(50% - 1rem);
+        }
+
+        &.expandir {
+          flex: 0 0 calc(100% - 1rem);
+          align-items: flex-start;
+
+          label {
+            flex: 0 0 12.5%;
+          }
+
+          textarea {
+            flex: 1;
+          }
+        }
+
+        label {
+          flex: 0 0 25%;
+        }
+
+        input[type="text"] {
+          flex: 0 0 75%;
+          height: 2rem;
+        }
+
+        .opciones {
+          display: flex;
+          flex: 1;
+
+          label {
+            padding-left: 1rem;
+          }
+        }
+
+        &.enviar {
+          display: flex;
+          justify-content: flex-end;
+
+          .boton {
+            @include boton($primario);
           }
         }
       }

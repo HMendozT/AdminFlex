@@ -170,7 +170,56 @@
             </ul>
           </div>
         </aside>
-        <div class="contenido">Contenido aqui</div>
+
+        <div class="contenido">
+          <h2 class="encabezado">Administracion de Clientes</h2>
+
+          <form action="#" class="formulario">
+            <div class="campo">
+              <label for="nombre">Nombre Cliente</label>
+              <input type="text" id="nombre" />
+            </div>
+            <div class="campo">
+              <label for="apellido">Apellido Cliente</label>
+              <input type="text" id="apellido" />
+            </div>
+            <div class="campo">
+              <label for="empresa">Empresa</label>
+              <input type="text" id="empresa" />
+            </div>
+            <div class="campo">
+              <label for="direccion">Direccion</label>
+              <input type="text" id="direccion" />
+            </div>
+            <div class="campo expandir">
+              <label for="info">Otra Informacion</label>
+              <textarea name="" id="info" cols="30" rows="10"></textarea>
+            </div>
+
+            <div class="campo expandir">
+              <label for="membership">Membresia:</label>
+              <div class="opciones">
+                <input type="radio" id="normal" name="contact" value="normal" />
+                <label for="normal">Normal</label>
+                <input type="radio" id="basico" name="contact" value="basico" />
+                <label for="basico">Basico</label>
+                <input type="radio" id="gold" name="contact" value="gold" />
+                <label for="gold">Gold</label>
+                <input
+                  type="radio"
+                  id="premium"
+                  name="contact"
+                  value="premium"
+                />
+                <label for="premium">Premium</label>
+              </div>
+            </div>
+
+            <div class="campo enviar expandir">
+              <input type="submit" class="boton" value="ENVIAR" />
+            </div>
+          </form>
+        </div>
       </main>
     </div>
   </body>
